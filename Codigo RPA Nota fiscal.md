@@ -11,7 +11,6 @@ VALIDADES = {
 
 notas = []
 
-# Pede a data de verificação no início
 while True:
     data_verificacao_str = input("Digite a data de verificação (dd/mm/aaaa): ")
     try:
@@ -75,11 +74,11 @@ def listar_todas():
 
     print("\n--- Todas as Notas Registradas (ordenadas pelo número da nota) ---")
 
-    # Ordena pela numeração da nota (convertendo para int)
+    
     try:
         notas_ordenadas = sorted(notas, key=lambda x: int(x['numero_nota']))
     except ValueError:
-        # Se número da nota não for inteiro, ordena alfabeticamente
+    
         notas_ordenadas = sorted(notas, key=lambda x: x['numero_nota'])
 
     for i, nota in enumerate(notas_ordenadas):
@@ -117,7 +116,7 @@ def verificar_atrasos():
     if not atrasos_encontrados:
         print("\nNenhum serviço está em atraso.")
 
-# Loop principal
+
 while True:
     print("BEM VINDO AO SISTEMA AUTOMATIZADO DE NFs DA AMB TELAS!")
     print("\n=== MENU ===")
